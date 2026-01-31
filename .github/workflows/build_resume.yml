@@ -1,4 +1,4 @@
-name: Build and Release Resume
+name: Build and Release Dual Resumes
 
 on:
   push:
@@ -12,19 +12,21 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Compile LaTeX
+      - name: Compile Portuguese
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: curriculo.tex
+
+      - name: Compile English
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
 
-      - name: Upload PDF to Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: resume.pdf
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+      - name: Rename Output Files
+        run: |
+          mv curriculo.pdf CURRICULO_JOAO_TENTIS.pdf
+          mv resume.pdf RESUME_JOAO_TENTIS.pdf
+
       - name: Update Latest Tag
         uses: richardsimko/update-tag@v1
         with:
@@ -36,7 +38,9 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: latest
-          files: resume.pdf
-          body: "Latest auto-generated resume."
+          files: |
+            CURRICULO_JOAO_TENTIS.pdf
+            RESUME_JOAO_TENTIS.pdf
+          body: "Auto-generated resumes (PT and EN)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

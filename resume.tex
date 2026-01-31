@@ -1,0 +1,147 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=0.5in,nofoot]{geometry}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{*1}{*1}
+
+\newcommand{\entry}[4]{
+  \noindent\textbf{#1} \hfill #2 \\
+  \noindent\textit{#3} \hfill \textit{#4} \\
+  \vspace{2pt}
+}
+
+\newcommand{\project}[2]{
+  \noindent\textbf{#1} \hfill #2 \\
+  \vspace{2pt}
+}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+\textbf{\Large João Pedro Tentis}
+
+\vspace{0.4em}
+
+\noindent \faMapMarker ~ Rio de Janeiro, RJ - Jacarepaguá ~ \faUser ~ 25 years old \\
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+\raggedleft
+{\color{blue}} {\faPhone \space +55 21 992285653} \quad
+{\color{blue}} \href{mailto:jps.tentis@gmail.com}{\faEnvelope \space jps.tentis@gmail.com}
+
+\vspace{0.2em}
+
+{\color{blue}} \href{https://joaotentis.dev}{\space joaotentis.dev}
+{\color{blue}} \href{https://github.com/jtentis}{\faGithub \space GitHub} \quad
+{\color{blue}} \href{https://linkedin.com/in/jtentis}{\faLinkedin \space LinkedIn} \\
+\end{minipage}
+
+\vspace{0.5em}
+
+\section*{Experience}
+\vspace{0.6em}
+\entry{Di Santinni}{\faCalendar \space 03/2025 -- Present}{Systems Analyst}{\faMapMarker \space Remote}
+\vspace{-1.6em}
+\begin{itemize}
+\setlength\itemsep{-0.3em}
+\item Responsible for the maintenance and evolution of the company's internal system, ensuring efficient operation and meeting user demands.
+\item Oracle database management, focusing on performance, SQL query development, report extraction, and system integration.
+\item Development of middleware solutions using Python (Flask, FastAPI, and WebScraping) and Node.js for XML file processing and external API consumption, converting file inputs into API requests.
+\end{itemize}
+
+\entry{Viva Rio}{\faCalendar \space 01/2024 -- 03/2025 (\textbf{$\sim$ 1 yr 2 mos})}{Information Assistant I}{\faMapMarker \space On-site}
+\vspace{-1.6em}
+\begin{itemize}
+\setlength\itemsep{-0.3em}
+\item Development of a desktop WhatsApp bot using Node.js with Nest.js, Electron.js, TypeScript, and TailwindCSS.
+\item Development, customization, and deployment of an LMS platform (EAD) on HostGator using Moodle, PHP, and SCSS.
+\item Creation of dynamic Dashboards with PowerBI, using Excel VBA and Python.
+\item Microservices architecture and unit testing implementation.
+\end{itemize}
+
+\entry{Di Santinni}{\faCalendar \space 02/2022 -- 01/2024 (\textbf{$\sim$ 1 yr 11 mos})}{IT Intern}{\faMapMarker \space Remote}
+\vspace{-1.6em}
+\begin{itemize}
+\setlength\itemsep{-0.3em}
+\item Service automation utilizing Python and pyautogui.
+\item Spreadsheet control and management using Excel and Google Sheets.
+\end{itemize}
+
+\entry{Global Hitss}{\faCalendar \space 10/2020 -- 02/2022 (\textbf{$\sim$ 1 yr 3 mos})}{Computer Operator}{\faMapMarker \space Remote}
+\vspace{-1.6em}
+\begin{itemize}
+\setlength\itemsep{-0.3em}
+\item Process automation utilizing Python web scraping.
+\item Spreadsheet management using Excel.
+% \item Documentation control of outsourced services in the intranet system.
+\end{itemize}
+
+% \entry{Globo}{\faCalendar \space 03/2019 -- 05/2020 (\textbf{$\sim$ 1 yr 2 mos})}{Apprentice - Administrative Assistant}{\faMapMarker \space On-site}
+% \vspace{-1.6em}
+% \begin{itemize}
+% \setlength\itemsep{-0.3em}
+% \item Order requests for scenic cities.
+% \item General production stock control.
+% \item Preparation, translation, and presentation of meetings in English for foreign suppliers.
+% \end{itemize}
+
+\section*{Projects}
+\vspace{0.6em}
+\project{\href{https://github.com/jtentis/MatchMovie-Native}{\space Match Movie} | \normalfont{\textit{React Native, TypeScript, EXPO, Node.js, Nest.js, PostgreSQL}}}{\textbf{February 2025}}
+\vspace{-1.6em}
+\begin{itemize}
+\setlength\itemsep{-0.3em}
+\item Development of a \textit{tinder-like} application (Bachelor's Thesis project) to facilitate movie choices for groups of users.
+\item Integration of external APIs such as TheMovieDB, OpenCage Geocoding, and Ingresso.com; usage of technologies like Context API, Expo Secure Store, and React Navigation.
+\item Redirection to nearby movie theaters based on user location.
+\item Screens designed with UI/UX standards, responsive and engaging interface, focusing on user experience.
+\end{itemize}
+
+\project{\href{https://github.com/jtentis/HorseCare}{\space HorseCare} | \normalfont{\textit{PHP, JavaScript, HTML, CSS, MySQL}}}{\textbf{December 2023}}
+\vspace{-1.6em}
+\begin{itemize}
+\setlength\itemsep{-0.3em}
+\item Development of an application for horse boarding management.
+\item User and employee registration with login authentication.
+% \item Responsive interface, developed with Figma following UI/UX standards.
+\end{itemize}
+
+\project{\href{https://www.linkedin.com/company/obinvestbrasil/}{\space Commodities} | \normalfont{\textit{Python, Streamlit, CSS}}}{\textbf{June 2023}}
+\vspace{-1.6em}
+\begin{itemize}
+\setlength\itemsep{-0.3em}
+\item Development of a Streamlit application for commodity and asset analysis/variance, utilizing matplotlib and pandas.
+\item Developed in partnership with \href{https://www.linkedin.com/company/obinvestbrasil/}{\space OBInvest} (Brazilian Investment Olympiad).
+% \item Extraction of asset and commodity information using yfinance.
+\end{itemize}
+
+\section*{Education}
+\vspace{0.6em}
+\entry{CEFET}{\faCalendar \space 02/2021 -- 02/2025 (\textbf{$\sim$ 4 years})}{Bachelor of Information Systems}{\faMapMarker \space On-site}
+\vspace{0.6em}
+
+\section*{Skills}
+\vspace{0.6em}
+\begin{itemize}
+\item \textbf{Languages:} \textbf{Native}: Portuguese | \textbf{Advanced}: English (C2 Level) | \textbf{Basic}: Spanish
+\item \textbf{Technologies:} JavaScript, TypeScript, HTML, CSS, Excel, Python, Node.js, PostgreSQL, Oracle, MariaDB, MySQL, MongoDB
+\item \textbf{Tools:} Git, GitHub, VSCode, Docker, HostGator, Vercel, AWS (Lambda, S3, EC2), CloudFlare, Railway, Cpanel, Figma, Trello, Jest, Playwright, SOLID
+\item \textbf{Frameworks:} Nest.js, Electron.js, Express, React, React Native, Expo, Swagger, TailwindCSS, SCSS, VBA, Pandas, Streamlit, Flask, FastAPI
+\end{itemize}
+
+\end{document}
