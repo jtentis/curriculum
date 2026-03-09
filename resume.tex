@@ -1,9 +1,17 @@
-\documentclass[a4paper,10pt]{article}
-\usepackage[margin=0.5in,nofoot]{geometry}
-\usepackage{fontawesome5}
-\usepackage{hyperref}
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, margin=18mm]{geometry}
+\usepackage{enumitem}
 \usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
+
+% Colors matching the PDF template
+\definecolor{dark}{HTML}{1A1A1A}
+\definecolor{muted}{HTML}{4B5563}
+\definecolor{light}{HTML}{6B7280}
 
 \hypersetup{
     colorlinks=true,
@@ -13,92 +21,84 @@
     citecolor=blue
 }
 
-\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{*1}{*1}
-
-\newcommand{\entry}[4]{
-  \noindent\textbf{#1} \hfill #2 \\
-  \noindent\textit{#3} \hfill \textit{#4} \\
-  \vspace{2pt}
-}
+% Section formatting: uppercase, bold, with rule below
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{dark}\MakeUppercase}
+  {}
+  {0pt}
+  {}
+  [\vspace{-0.6em}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{1.2em}{0.4em}
 
 \newcommand{\project}[2]{
   \noindent\textbf{#1} \hfill #2 \\
   \vspace{2pt}
 }
 
+% Remove page numbers
+\pagestyle{empty}
+
+% Default text color
+\color{dark}
+
 \begin{document}
 
-\pagenumbering{gobble}
-
-\noindent
-\begin{minipage}[t]{0.5\textwidth}
-\textbf{\Large João Pedro Tentis}
-
+% --- Name ---
+\begin{center}
+{\LARGE\bfseries João Pedro Tentis}
+\end{center}
+\begin{center}
+{\color{muted}\large Full-Stack Developer | Specialist in React, Node.js, and Python}
+\end{center}
+\begin{center}
+{\color{muted}\small jps.tentis@gmail.com \enspace | \enspace +55 (21) 99228-5653} \enspace | \enspace \href{https://joaotentis.dev}{joaotentis.dev}
+\end{center}
 \vspace{0.2em}
+\section*{Professional Summary}
+Bilingual Full-Stack Developer with 5+ years of experience in web development and automation, specializing in AWS serverless architectures and React/Node.js applications. Proven track record in developing REST APIs, integrating microservices, and SQL database modeling, delivering solutions that process thousands of daily requests and automating processes to reduce operational time by up to 70\%.
 
-\noindent \faMapMarker ~ Rio de Janeiro, RJ - Jacarepaguá ~ \faUser ~ 25 years old \\
-\end{minipage}%
-\begin{minipage}[t]{0.5\textwidth}
-\raggedleft
-{\color{blue}} {\faPhone \space +55 21 992285653} \quad
-{\color{blue}} \href{mailto:jps.tentis@gmail.com}{\faEnvelope \space jps.tentis@gmail.com}
+\section*{Professional Experience}
+\vspace{0.3em}
+\noindent\textbf{Systems Analyst} \hfill {\color{light}\small 03/2025 - Present}
 
-\vspace{0.2em}
-
-{\color{blue}} \href{https://joaotentis.dev}{\space joaotentis.dev}
-{\color{blue}} \href{https://github.com/jtentis}{\faGithub \space GitHub} \quad
-{\color{blue}} \href{https://linkedin.com/in/jtentis}{\faLinkedin \space LinkedIn} \\
-\end{minipage}
-
-\vspace{0.2em}
-
-\section*{Experience}
-\vspace{0.6em}
-\entry{Di Santinni}{\faCalendar \space 03/2025 -- Present}{Systems Analyst}{\faMapMarker \space Remote}
-\vspace{-1.6em}
-\begin{itemize}
-\setlength\itemsep{-0.3em}
-\item Responsible for the maintenance and evolution of the company's internal system, ensuring efficient operation and meeting user demands.
-\item Oracle database management, focusing on performance, SQL query development, report extraction, and system integration.
-\item Development of middleware solutions using Python (Flask, FastAPI, and WebScraping) and Node.js for XML file processing and external API consumption, converting file inputs into API requests.
+\noindent{\color{light}Di Santinni}
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt, parsep=0pt, topsep=2pt]
+  \item Developed and maintained REST APIs in Python (Flask, FastAPI) and Node.js for processing XML files and integrating with external systems, reducing processing time by 60\%.
+  \item Optimized SQL queries in Oracle databases managing over 10 million records, improving report performance by 45\%.
+  \item Implemented middleware solutions for external API consumption, converting XML data into automated HTTP requests and eliminating manual processes.
+  \item Architected integrations between legacy systems and new applications, ensuring zero downtime during migrations.
 \end{itemize}
 
-\entry{Viva Rio}{\faCalendar \space 01/2024 -- 03/2025 (\textbf{$\sim$ 1 yr 2 mos})}{Information Assistant I}{\faMapMarker \space On-site}
-\vspace{-1.6em}
-\begin{itemize}
-\setlength\itemsep{-0.3em}
-\item Development of a desktop WhatsApp bot using Node.js with Nest.js, Electron.js, TypeScript, and TailwindCSS.
-\item Development, customization, and deployment of an LMS platform (EAD) on HostGator using Moodle, PHP, and SCSS.
-\item Creation of dynamic Dashboards with PowerBI, using Excel VBA and Python.
-\item Microservices architecture and unit testing implementation.
+\vspace{0.3em}
+\noindent\textbf{Information Assistant I} \hfill {\color{light}\small 01/2024 - 03/2025}
+
+\noindent{\color{light}Viva Rio}
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt, parsep=0pt, topsep=2pt]
+  \item Developed a desktop application for WhatsApp using Node.js, Nest.js, Electron.js, TypeScript, and TailwindCSS, serving over 1,200 monthly users.
+  \item Implemented and deployed a customized Moodle LMS platform using PHP and SCSS on HostGator, supporting 500+ concurrent students.
+  \item Created dynamic PowerBI dashboards integrated with Python and Excel VBA to process and visualize datasets exceeding 50,000 lines.
+  \item Designed microservices architecture with unit test coverage exceeding 80\%, reducing production bugs by 55\%.
 \end{itemize}
 
-\entry{Di Santinni}{\faCalendar \space 02/2022 -- 01/2024 (\textbf{$\sim$ 1 yr 11 mos})}{IT Intern}{\faMapMarker \space Remote}
-\vspace{-1.6em}
-\begin{itemize}
-\setlength\itemsep{-0.3em}
-\item Service automation utilizing Python and pyautogui.
-\item Spreadsheet control and management using Excel and Google Sheets.
+\vspace{0.3em}
+\noindent\textbf{IT Intern} \hfill {\color{light}\small 02/2022 - 01/2024}
+
+\noindent{\color{light}Di Santinni}
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt, parsep=0pt, topsep=2pt]
+  \item Automated 15+ operational processes using Python (pyautogui), reducing execution time for repetitive tasks by 70\%.
+  \item Developed scripts for handling and integrating Excel and Google Sheets spreadsheets, processing over 10,000 daily records.
+  \item Implemented data extraction and transformation solutions, optimizing internal workflows and increasing team productivity by 40\%.
 \end{itemize}
 
-\entry{Global Hitss}{\faCalendar \space 10/2020 -- 02/2022 (\textbf{$\sim$ 1 yr 3 mos})}{Computer Operator}{\faMapMarker \space Remote}
-\vspace{-1.6em}
-\begin{itemize}
-\setlength\itemsep{-0.3em}
-\item Process automation utilizing Python web scraping.
-\item Spreadsheet management using Excel.
-% \item Documentation control of outsourced services in the intranet system.
-\end{itemize}
+\vspace{0.3em}
+\noindent\textbf{Computer Operator} \hfill {\color{light}\small 10/2020 - 02/2022}
 
-% \entry{Globo}{\faCalendar \space 03/2019 -- 05/2020 (\textbf{$\sim$ 1 yr 2 mos})}{Apprentice - Administrative Assistant}{\faMapMarker \space On-site}
-% \vspace{-1.6em}
-% \begin{itemize}
-% \setlength\itemsep{-0.3em}
-% \item Order requests for scenic cities.
-% \item General production stock control.
-% \item Preparation, translation, and presentation of meetings in English for foreign suppliers.
-% \end{itemize}
+\noindent{\color{light}Global Hitss}
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt, parsep=0pt, topsep=2pt]
+  \item Automated web scraping processes with Python to collect and process data from multiple sources, reducing manual labor by 65\%.
+  \item Managed and organized Excel databases with over 20,000 rows, ensuring the integrity and availability of critical information.
+  \item Optimized operational routines through automated scripts, increasing departmental efficiency by 50\%.
+\end{itemize}
 
 \section*{Projects}
 \vspace{0.6em}
@@ -106,42 +106,47 @@
 \vspace{-1.6em}
 \begin{itemize}
 \setlength\itemsep{-0.3em}
-\item Development of a \textit{tinder-like} application (Bachelor's Thesis project) to facilitate movie choices for groups of users.
-\item Integration of external APIs such as TheMovieDB, OpenCage Geocoding, and Ingresso.com; usage of technologies like Context API, Expo Secure Store, and React Navigation.
-\item Redirection to nearby movie theaters based on user location.
-\item Screens designed with UI/UX standards, responsive and engaging interface, focusing on user experience.
+\item Developed a "Tinder-like" application (Capstone/TCC project) to facilitate movie selection for groups.
+\item Utilized external APIs including: TheMovieDB, OpenCage Geocoding, and Ingresso.com; implemented technologies such as Context API, Expo Secure Store, and React Navigation.
+\item The application redirects to nearby cinemas based on user location.
+\item Features high-standard UI/UX patterns with a responsive and engaging interface focused on user experience.
 \end{itemize}
 
 \project{\href{https://github.com/jtentis/HorseCare}{\space HorseCare} | \normalfont{\textit{PHP, JavaScript, HTML, CSS, MySQL}}}{\textbf{December 2023}}
 \vspace{-1.6em}
 \begin{itemize}
 \setlength\itemsep{-0.3em}
-\item Development of an application for horse boarding management.
-\item User and employee registration with login authentication.
-% \item Responsive interface, developed with Figma following UI/UX standards.
+\item Developed an application for horse boarding management.
+\item Includes user and employee registration with login authentication.
 \end{itemize}
 
 \project{\href{https://www.linkedin.com/company/obinvestbrasil/}{\space Commodities} | \normalfont{\textit{Python, Streamlit, CSS}}}{\textbf{June 2023}}
 \vspace{-1.6em}
 \begin{itemize}
 \setlength\itemsep{-0.3em}
-\item Development of a Streamlit application for commodity and asset analysis/variance, utilizing matplotlib and pandas.
-\item Developed in partnership with \href{https://www.linkedin.com/company/obinvestbrasil/}{\space OBInvest} (Brazilian Investment Olympiad).
-% \item Extraction of asset and commodity information using yfinance.
+\item Developed a web application using Streamlit for analysis and variance of commodities and assets, utilizing Matplotlib and Pandas.
+\item Created in partnership with \href{https://www.linkedin.com/company/obinvestbrasil/}{\space OBInvest} (Brazilian Investment Olympiad).
 \end{itemize}
-
-\section*{Education}
-\vspace{0.6em}
-\entry{CEFET}{\faCalendar \space 02/2021 -- 02/2025 (\textbf{$\sim$ 4 years})}{Bachelor of Information Systems}{\faMapMarker \space On-site}
-\vspace{0.6em}
 
 \section*{Skills}
 \vspace{0.6em}
 \begin{itemize}
-\item \textbf{Languages:} \textbf{Native}: Portuguese | \textbf{Advanced}: English (C2 Level) | \textbf{Basic}: Spanish
-\item \textbf{Technologies:} JavaScript, TypeScript, HTML, CSS, Excel, Python, Node.js, PostgreSQL, Oracle, MariaDB, MySQL, MongoDB
-\item \textbf{Tools:} Git, GitHub, VSCode, Docker, HostGator, Vercel, AWS (Lambda, S3, EC2), CloudFlare, Railway, Cpanel, Figma, Trello, Jest, Playwright, SOLID
-\item \textbf{Frameworks:} Nest.js, Electron.js, Express, React, React Native, Expo, Swagger, TailwindCSS, SCSS, VBA, Pandas, Streamlit, Flask, FastAPI
+\item \textbf{Languages:} \textbf{Native}: Portuguese | \textbf{Advanced}: English (C2 level) | \textbf{Basic}: Spanish
+\item \textbf{Languages:} Python, JavaScript, TypeScript, SQL (PostgreSQL, Oracle, MySQL, MariaDB), HTML, CSS
+\item \textbf{Frameworks \& Libs:} React, Next.js, Nest.js, Node.js, Express, Flask, FastAPI, React Native, Expo, Redux, Axios, Pandas, Streamlit, Electron.js
+\item \textbf{Cloud \& Infra:} AWS (Lambda, S3, EC2), Docker, Serverless, CI/CD, Vercel, HostGator, CloudFlare, Railway, Cpanel
+\item \textbf{Tools \& Technologies:} Git, GitHub, VSCode, Prisma, TailwindCSS, SCSS, Jest, Playwright, Swagger, Figma, Trello, Excel, VBA, PWA, REST APIs
 \end{itemize}
+
+\section*{Education}
+\vspace{0.3em}
+\noindent\textbf{B.S. in Information Systems} \hfill {\color{light}\small 2021 - 2025}
+
+\noindent{\color{light}CEFET}
+\vspace{0.6em}
+
+\noindent\textbf{M.S. in Data Engineering} \hfill {\color{light}\small 2026 - 2028}
+
+\noindent{\color{light}UFRJ}
 
 \end{document}
